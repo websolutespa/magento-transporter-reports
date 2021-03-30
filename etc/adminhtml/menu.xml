@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © Websolute spa. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Websolute_TransporterReports::reports"
+             title="Transporter"
+             translate="title"
+             module="Websolute_TransporterReports"
+             sortOrder="5"
+             parent="Magento_Reports::report"
+             resource="Websolute_TransporterReports::reports" />
+
+        <add id="Websolute_TransporterReports::reports_activity"
+             title="All Activities"
+             translate="title"
+             module="Websolute_TransporterReports"
+             sortOrder="10"
+             parent="Websolute_TransporterReports::reports"
+             action="transporter_reports/reports/activity"
+             resource="Websolute_TransporterReports::reports_activity" />
+
+        <add id="Websolute_TransporterReports::reports_entity"
+             title="All Entity"
+             translate="title"
+             module="Websolute_TransporterReports"
+             sortOrder="15"
+             parent="Websolute_TransporterReports::reports"
+             action="transporter_reports/reports/entity"
+             resource="Websolute_TransporterReports::reports_activity" />
+    </menu>
+</config>
+

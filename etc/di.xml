@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © Websolute spa. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="websolute_transporter_reports_activity_data_source" xsi:type="string">
+                    Websolute\TransporterIndexer\Model\ResourceModel\Indexer\Grid\Collection\Virtual
+                </item>
+                <item name="websolute_transporter_reports_entity_data_source" xsi:type="string">
+                    Websolute\TransporterIndexer\Model\ResourceModel\Indexer\Entity\Grid\Collection\Virtual
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Websolute\TransporterIndexer\Model\ResourceModel\Indexer\Grid\Collection\Virtual"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">transporter_activity</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Websolute\TransporterActivity\Model\ResourceModel\ActivityResourceModel
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Websolute\TransporterIndexer\Model\ResourceModel\Indexer\Entity\Grid\Collection\Virtual"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mg_transporter_entity</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Websolute\TransporterEntity\Model\ResourceModel\EntityResourceModel
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
